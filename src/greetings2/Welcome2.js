@@ -11,26 +11,6 @@ module.exports = class Welcome2 {
         this.member = "404";
     }
     
-    let num = "";
-    switch(this.member)
-    {
-    case 1: {
-    num = "st";
-    break;
-     }
-     case 2: {
-     num = "nd";
-     break;
-     }
-     case 3: {
-     num = "rd";
-     break;
-     }
-     default: {
-     num = "th";
-     }
-    }
-    
      //avatar
     setAvatar(value) {
         this.avatar = value;
@@ -57,6 +37,26 @@ module.exports = class Welcome2 {
     }
     async toAttachment() {
     
+
+   let num = "";
+    switch(this.member)
+    {
+    case 1: {
+    num = "st";
+    break;
+     }
+     case 2: {
+     num = "nd";
+     break;
+     }
+     case 3: {
+     num = "rd";
+     break;
+     }
+     default: {
+     num = "th";
+     }
+    }
     
         // Create canvas
         const canvas = Canvas.createCanvas(600, 300);
