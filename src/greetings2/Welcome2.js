@@ -9,7 +9,7 @@ module.exports = class Welcome2 {
         this.username = "Lenz-cmd";
         this.grupname = "SQUAD-404";
         this.member = "404";
-    }
+    } 
     
      //avatar
     setAvatar(value) {
@@ -35,43 +35,31 @@ module.exports = class Welcome2 {
         this.member = value;
         return this;
     }
-    async toAttachment() {
     
+    async function memberSuffix(n) {
+let num = "";
 
-   let num;
-/*   switch(this.member)
-    {
-    case 1: {
-    num = "st";
-    break;
-     }
-     case 2: {
-     num = "nd";
-     break;
-     }
-     case 3: {
-     num = "rd";
-     break;
-     }
-     default: {
-     num = "th";
-     break;
-     }
-    }*/
-
-    if(this.member == 1){
+ if (n % 100 >= 10 && n % 100 <= 19){
+ num = 'th';
+}
+    else if(n % 10 === 1){
 num = "st";
 } 
-else if(this.member == 2){
+else if(n % 10 === 2){
 num = "nd";
 }
-else if(this.member == 3){
+else if(n % 10 === 3){
 num = "rd";
 }
 else{
 num = "th";
 }
+return n + num;
+};
+
+    async toAttachment() {
     
+    const suffix = await memberSuffix(this.member);
         // Create canvas
         const canvas = Canvas.createCanvas(600, 300);
         const ctx = canvas.getContext("2d");
@@ -106,7 +94,7 @@ num = "th";
         ctx.font = "700 20px Courier New";
         ctx.textAlign = 'left';
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(`${this.member}${num} member`, 250, 290);
+        ctx.fillText(`${suffix} member`, 250, 290);
         
         let username = this.username;
         let namalu = username.length > 12 ? username.substring(0, 15) + "..." : username;
