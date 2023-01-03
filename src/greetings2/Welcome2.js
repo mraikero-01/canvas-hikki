@@ -36,7 +36,7 @@ module.exports = class Welcome2 {
         return this;
     }
     
-    async function memberSuffix(n) {
+    async memberSuffix(n) {
 let num = "";
 
  if (n % 100 >= 10 && n % 100 <= 19){
