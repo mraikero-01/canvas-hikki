@@ -39,7 +39,7 @@ module.exports = class Welcome2 {
     
 
    let num;
-   switch(this.member)
+/*   switch(this.member)
     {
     case 1: {
     num = "st";
@@ -57,7 +57,20 @@ module.exports = class Welcome2 {
      num = "th";
      break;
      }
-    }
+    }*/
+
+    if(this.member == 1){
+num = "st";
+} 
+else if(this.member == 2){
+num = "nd";
+}
+else if(this.member == 3){
+num = "rd";
+}
+else{
+num = "th";
+}
     
         // Create canvas
         const canvas = Canvas.createCanvas(600, 300);
