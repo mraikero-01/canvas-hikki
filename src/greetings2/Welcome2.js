@@ -38,8 +38,8 @@ module.exports = class Welcome2 {
     async toAttachment() {
     
 
-   let num = "rd";
-  /*  switch(this.member)
+   let num;
+   switch(this.member)
     {
     case 1: {
     num = "st";
@@ -55,8 +55,9 @@ module.exports = class Welcome2 {
      }
      default: {
      num = "th";
+     break;
      }
-    }*/
+    }
     
         // Create canvas
         const canvas = Canvas.createCanvas(600, 300);
