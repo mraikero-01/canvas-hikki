@@ -1,5 +1,26 @@
 const Canvas = require("canvas");
 
+    async function memberSuffix(n) {
+let num = "";
+
+ if (n % 100 >= 10 && n % 100 <= 19){
+ num = 'th';
+}
+    else if(n % 10 === 1){
+num = "st";
+} 
+else if(n % 10 === 2){
+num = "nd";
+}
+else if(n % 10 === 3){
+num = "rd";
+}
+else{
+num = "th";
+}
+return n + num;
+};
+
 module.exports = class Welcome2 {
 
     constructor() {
@@ -36,26 +57,6 @@ module.exports = class Welcome2 {
         return this;
     }
     
-    async memberSuffix(n) {
-let num = "";
-
- if (n % 100 >= 10 && n % 100 <= 19){
- num = 'th';
-}
-    else if(n % 10 === 1){
-num = "st";
-} 
-else if(n % 10 === 2){
-num = "nd";
-}
-else if(n % 10 === 3){
-num = "rd";
-}
-else{
-num = "th";
-}
-return n + num;
-};
 
     async toAttachment() {
     
